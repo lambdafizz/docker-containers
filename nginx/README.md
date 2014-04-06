@@ -29,7 +29,7 @@ it. Then you edit `conf.d/allowed-variables.conf`:
 Now inside `sites-enabled/app`:
 
     upstream application  {
-        set_by_lua $srvaddr 'return os.getenv("APP_PORT")';
+        set_by_lua $srvaddr 'return os.getenv("APP_PORT"):gsub("tcp", "http")';
         server $srvaddr;
     }
  
