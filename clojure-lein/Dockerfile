@@ -8,6 +8,6 @@ RUN chmod a+x /bin/lein
 ENV LEIN_ROOT true
 # we need to add maven local cache as volume, so deps don't get
 # fetched on every run in container
-VOLUMES ["/root/.m2"]
+VOLUME ["/root/.m2"]
 # request lein version to prefetch it and then commit
 RUN lein version
